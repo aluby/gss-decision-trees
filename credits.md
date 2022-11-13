@@ -1,4 +1,4 @@
-Created by [Amanda Luby](https://aluby.domains.swarthmore.edu). 
+Created by [Amanda Luby](https://aluby.domains.swarthmore.edu). All code is available on [github](https://github.com/aluby/gss-decision-trees/).
 
 App design based on the [Decision Tree Shiny App](https://foggalong.shinyapps.io/sutton-dt/) by [Isabella Deutsch](https://isabelladeutsch.com/) and [Josh Fogg](https://www.maths.ed.ac.uk/~jfogg/). 
 
