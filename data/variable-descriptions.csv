@@ -1,0 +1,24 @@
+variable,label,value_labels
+wrkslf,r self-emp or works for somebody,[1] self-employed; [2] someone else
+wrkgovt,govt or private employee,[1] government; [2] private
+marital,marital status,[1] married; [2] widowed; [3] divorced; [4] separated; [5] never married
+childs,number of children,[8] 8 or more
+age,age of respondent,[89] 89 or older
+educ,highest year of school completed,[0] no formal schooling
+degree,r's highest degree,[0] less than high school; [1] high school; [2] associate/junior college; [3] bachelor's; [4] graduate
+padeg,father's highest degree,[0] less than high school; [1] high school; [2] associate/junior college; [3] bachelor's; [4] graduate
+madeg,mothers highest degree,[0] less than high school; [1] high school; [2] associate/junior college; [3] bachelor's; [4] graduate
+sex,respondents sex,[1] male; [2] female
+race,race of respondent,[1] white; [2] black; [3] other
+res16,type of place lived in when 16 yrs old,"[1] in open country but not on a farm; [2] farm; [3] in a small city or town (under 50,000); [4] in a medium-size city (50,000-250,000); [5] in a suburb near a large city; [6] in a large city (over 250,000)"
+reg16,"region of residence, age 16",[0] foreign; [1] new england; [2] middle atlantic; [3] east north central; [4] west north central; [5] south atlantic; [6] east south atlantic; [7] west south central; [8] mountain; [9] pacific
+parborn,were r's parents born in this country,"[0] both born in the u.s.; [1] mother yes, father no; [2] mother no, father yes; [3] mother yes, father don't know; [4] mother no, father don't know; [5] mother don't know, father yes; [6] mother don't know, father no; [7] mother don't know, father don't know; [8] neither born in the u.s."
+partyid,political party affiliation,"[0] strong democrat; [1] not very strong democrat; [2] independent, close to democrat; [3] independent (neither, no response); [4] independent, close to republican; [5] not very strong republican; [6] strong republican; [7] other party"
+vote12,did r vote in 2012 election,[1] voted; [2] did not vote; [3] ineligible
+pres12,vote obama or romney,[1] obama; [2] romney; [3] other candidate (specify); [4] didn't vote for president
+relig,r's religious preference,[1] protestant; [2] catholic; [3] jewish; [4] none; [5] other; [6] buddhism; [7] hinduism; [8] other eastern religions; [9] muslim/islam; [10] orthodox-christian; [11] christian; [12] native american; [13] inter-nondenominational
+vetyears,years in armed forces,"[0] no active duty; [1] yes, less than 2 years; [2] yes, 2-4 years; [3] yes, more than 4 years; [4] 'some, don't know how long"
+dwelling,type of structure,"[1] trailer; [2] detached single family house; [3] 2-family house, 2 units side-by-side; [4] 2-family house, 2 units one above the other; [5] detached 3-4 family house; [6] row house (3 or more units in an attached row); [7] apartment house (5 or more units, 3 stories or less); [8] apartment house (5 or more units, 4 stories or more); [9] apartment in a partly commercial structure; [10] other"
+dwelown,does r own or rent home?,[1] own or is buying; [2] pays rent; [3] other
+famgen,number of family generations in household,"[1] one generation; [2] two generations, children; [3] two generations, parents; [4] two generations, grandchild(ren); [5] three generations, child(ren), grandchildren; [6] three generations, child(ren), parent; [7] four generations"
+zodiac,respondents astrological sign,[1] aries; [2] taurus; [3] gemini; [4] cancer; [5] leo; [6] virgo; [7] libra; [8] scorpio; [9] sagittarius; [10] capricorn; [11] aquarius; [12] pisces
