@@ -46,7 +46,7 @@ textTree = function(tree){
     roundint=FALSE, 
     clip.facs=TRUE, 
     cover = TRUE,
-    style = "tallw")) %>% 
+    style = "tall")) %>% 
     as_tibble()
   cols_to_squish = colnames(table)[2:(ncol(table)-1)]
   table = table %>% 
