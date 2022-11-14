@@ -21,12 +21,12 @@ cont_vars = c("age", "educ", "sibs", "wordsum", "agekdbrn", "childs")
 
 vars_default = c("age", "party_id3", "res16")
 
-makeTree = function(model_vars, cost_complexity = .01, data) {
+makeTree = function(model_vars, cost_complexity = .01, metric, data) {
   f = paste("voted_16 ~ ", paste(model_vars, collapse = " + "))
   tree = decision_tree(mode = "classification",
                        cost_complexity = cost_complexity) %>%
     set_engine("rpart",
-               parms = list(split = "gini")) %>%
+               parms = list(split = metric)) %>%
     fit(as.formula(f),
         data = data)
   
@@ -51,7 +51,9 @@ textTree = function(tree){
   cols_to_squish = colnames(table)[2:(ncol(table)-1)]
   table = table %>% 
     unite("Rules", all_of(cols_to_squish)) %>%
-    rename(`P(Voted)` = voted_16, `% of Data` = `X..cover`)
+    mutate(p_voted = 1-as.numeric(voted_16)) %>%
+    select(-voted_16) %>%
+    select(`P(Voted)` = p_voted, Rules, `% of Data` = `X..cover`)
   return(as_tibble(table))
 }
 
@@ -108,7 +110,7 @@ ui <- fluidPage(theme = shinytheme("flatly"),
             options = list(`actions-box` = TRUE),
             multiple = TRUE
           ),
-          h4("Cost Complexity"),
+          h4("Cost/Complexity Parameter"),
           helpText(
             "Smaller values lead to a more complicated tree"
           ),
@@ -118,6 +120,16 @@ ui <- fluidPage(theme = shinytheme("flatly"),
             min = 1e-5,       # two is the smallest that could be split
             max = .1,      # chosen to not make the models too wild
             value = .01      # defaults to not having an artifical minimum
+          ),
+          h4("Metric for Splitting"),
+          radioGroupButtons(
+            inputId = "metric",
+            label = NULL,
+            choiceNames = c("Gini Index", 
+                        "Information Gain"),
+            choiceValues = c("gini",
+                             "information"),
+            justified = TRUE
           ),
           actionButton(
             inputId = "createModel",
@@ -182,6 +194,7 @@ server <- function(input, output, session) {
       valueExpr = makeTree(
         model_vars = c(input$gss_vars), 
         cost_complexity = input$cost_comp,
+        metric = input$metric,
         data = train_data
       )
     )
